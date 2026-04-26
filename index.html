@@ -5,63 +5,138 @@
     <title>Bistrotter</title>
 </head>
 <body>
-<header>
-<h1>Bistrotter</h1>
-<p>Entre deux voyages, pourquoi ne pas partir à la découverte de la gastronomie locale française?</p>
 
+<header>
+    <h1>Bistrotter</h1>
+    <p>Entre deux voyages, pourquoi ne pas partir à la découverte de la gastronomie locale française ?</p>
 </header>
 
 <main>
-    <section>
-<h2>Notre concept</h2>
-<p>Découvrez et recommandez des bistrots français</p>
-<p>Nous vivons à une époque où tout est accessible : l'information, le progrès, les technologies, la découverte de contrées lointaines. Et pourquoi pas découvrir nos propres richesses locales?</p>
-    </section>
 
-    <section>
-<p>proposer un bistrot</p>       
- <p>Bistrotter est une plateforme dédiée à la découverte et au partage des bistrots français,
-du plus modeste au plus luxueux. Notre objectif est de mettre en valeur la richesse de la
-gastronomie locale en permettant à chacun de recommander ses adresses préférées.
-Grâce à votre contribution, les utilisateurs peuvent explorer de nouveaux lieux selon leur
-budget et leurs envies, et redécouvrir le patrimoine culinaire français.
-</p>
-    </section>
+<section>
+    <h2>Notre concept</h2>
+    <p>Découvrez et recommandez des bistrots français.</p>
+    <p>
+        Nous vivons à une époque où tout est accessible : l'information, le progrès,
+        les technologies, la découverte de contrées lointaines. Et pourquoi pas
+        découvrir nos propres richesses locales ?
+    </p>
+</section>
+
+<section>
+    <h2>Proposer un bistrot</h2>
+    <p>
+        Bistrotter est une plateforme dédiée à la découverte et au partage des bistrots français,
+        du plus modeste au plus luxueux. Notre objectif est de mettre en valeur la richesse de la
+        gastronomie locale en permettant à chacun de recommander ses adresses préférées.
+        Grâce à votre contribution, les utilisateurs peuvent explorer de nouveaux lieux selon leur
+        budget et leurs envies, et redécouvrir le patrimoine culinaire français.
+    </p>
+</section>
+
+<section>
+    <h2>Formulaire de proposition</h2>
+
+    <form action="#" method="post">
+
+        <fieldset>
+            <legend>Informations personnelles</legend>
+
+            <table>
+                <tr>
+                    <td><label for="nom">Nom :</label></td>
+                    <td><input type="text" id="nom" name="nom" required></td>
+                </tr>
+
+                <tr>
+                    <td><label for="email">Email :</label></td>
+                    <td><input type="email" id="email" name="email" required></td>
+                </tr>
+            </table>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Informations sur le bistrot</legend>
+
+            <table>
+                <tr>
+                    <td><label for="bistrot">Nom du bistrot :</label></td>
+                    <td><input type="text" id="bistrot" name="bistrot" required></td>
+                </tr>
+
+                <tr>
+                    <td><label for="ville">Ville :</label></td>
+                    <td><input type="text" id="ville" name="ville" required></td>
+                </tr>
+
+                <tr>
+                    <td><label for="prix">Fourchette de prix :</label></td>
+                    <td>
+                        <select id="prix" name="prix" required>
+                            <option value="">-- Choisissez une gamme de prix --</option>
+                            <option value="1">€</option>
+                            <option value="2">€€</option>
+                            <option value="3">€€€</option>
+                            <option value="4">€€€€</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Type de bistrot</legend>
+
+            <table>
+                <tr>
+                    <td><label for="type">Type de bistrot :</label></td>
+                    <td>
+                        <select id="type" name="type" required>
+                            <option value="">-- Choisissez un type --</option>
+                            <option value="traditionnel">Traditionnel</option>
+                            <option value="moderne">Moderne</option>
+                            <option value="gastronomique">Gastronomique</option>
+                            <option value="familial">Familial</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Service</legend>
+
+            <input type="radio" id="sur-place" name="service" value="sur-place" required>
+            <label for="sur-place">Sur place</label><br>
+
+            <input type="radio" id="a-emporter" name="service" value="a-emporter">
+            <label for="a-emporter">À emporter</label><br>
+
+            <input type="radio" id="livraison" name="service" value="livraison">
+            <label for="livraison">Livraison</label>
+
+        </fieldset>
+
+        <br>
+
+        <button type="submit">Proposer le bistrot</button>
+
+    </form>
+</section>
+
 </main>
-<form>
-    <!-- éléments du formulaire ici -->
-     <form>
-
-    <label for="nom">Nom :</label>
-    <input type="text" id="nom" name="nom" required>
-
-    <br><br>
-
-    <label for="email">Email :</label>
-    <input type="email" id="email" name="email" required>
-
-    
-    <label for="bistrot">Nom du bistrot :</label>
-    <input type="text" id="bistrot" name="bistrot" required>
-
-    <br><br>
-
-    <label for="ville">Ville :</label>
-    <input type="text" id="ville" name="ville" required>
-
-    <br>
-    <label for="prix">Fourchette de prix :</label>
-<select id="prix" name="prix" required>
-    <option value="">-- Choisissez une gamme de prix --</option>
-    <option value="1">€</option>
-    <option value="2">€€</option>
-    <option value="3">€€€</option>
-    <option value="4">€€€€</option>
-</select>
-
-</form>
 
 <footer>
+    <p>Bistrotter - Projet étudiant</p>
 </footer>
+
 </body>
 </html>
