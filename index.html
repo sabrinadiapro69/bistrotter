@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Bistrotter</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+<header id="entete">
     <h1>Bistrotter</h1>
     <p>Entre deux voyages, pourquoi ne pas partir à la découverte de la gastronomie locale française?</p>
 </header>
 
 <main>
 
-<section>
+<section id="concept">
     <h2>Notre concept</h2>
     <p>Découvrez et recommandez des bistrots français</p>
     <p>
@@ -22,7 +23,7 @@
     </p>
 </section>
 
-<section>
+<section id="presentation">
     <h2>Proposer un bistrot</h2>
     <p>
         Bistrotter est une plateforme dédiée à la découverte et au partage des bistrots français,
@@ -31,12 +32,12 @@
     </p>
 </section>
 
-<section>
+<section id="form">
     <h2>Formulaire</h2>
 
-    <form>
+    <form id="formulaire">
 
-        <fieldset>
+        <fieldset id="infos-perso">
         <!--La balise fieldset nous permet de regrouper les champs liés aux infos personnelles-->
             <legend>Informations personnelles</legend>
             <!--La balise legend permet de définir le titre du groupe fieldset-->
@@ -44,17 +45,17 @@
             <table>
                 <tr>
                     <td><label for="nom">Nom :</label></td>
-                    <td><input type="text" id="nom" required></td>
+                    <td><input type="text" id="nom" name="nom" required></td>
                 </tr>
 
                 <tr>
                     <td><label for="email">Email :</label></td>
-                    <td><input type="email" id="email" required></td>
+                    <td><input type="email" id="email" name="email" required></td>
                 </tr>
 
                 <tr>
                     <td><label for="telephone">Téléphone :</label></td>
-                    <td><input type="tel" id="telephone" required></td>
+                    <td><input type="tel" id="telephone" name="telephone" required></td>
                 </tr>
             </table>
 
@@ -62,7 +63,7 @@
 
         <br>
 
-        <fieldset>
+        <fieldset id="type-bistrot">
         <!--La balise fieldset nous permet de regrouper les champs liés aux infos du bistro-->
             <legend>Informations du bistrot</legend>
             <!--La balise legend permet de définir le titre du groupe fieldset-->
@@ -71,7 +72,7 @@
                 <tr>
                     <td><label for="type">Type de bistrot :</label></td>
                     <td>
-                        <select id="type" required>
+                        <select id="type" name="type" required>
                             <option value="">-- Choisissez un type --</option>
                             <option>Traditionnel</option>
                             <option>Moderne</option>
@@ -82,15 +83,14 @@
 
                 <tr>
                     <td><label for="ville">Ville :</label></td>
-                    <td><input type="text" id="ville" required></td>
+                    <td><input type="text" id="ville" name="ville" required></td>
                 </tr>
-            <br>
-            <br>
+
                 <tr>
                     <td><label for="prix">Fourchette de prix :</label></td>
                     <td>
                         
-                        <select id="prix" required>
+                        <select id="prix" name="prix" required>
                             <option value="">-- Choisissez une gamme de prix --</option>
                             <option>€</option>
                             <option>€€</option>
@@ -105,16 +105,19 @@
 
         <br>
 
-        <fieldset>
+        <fieldset id="services">
         <!--La balise fieldset nous permet de regrouper les champs liés aux infos du service-->
             <legend>Service</legend>
             <!--La balise legend permet de définir le titre du groupe fieldset-->
 
-            <input type="radio" name="service"> Sur place
+            <input type="radio" id="sur-place"  name="service" value="sur-place"> 
+            <label for="sur-place">Sur place</label>
             <br>
-            <input type="radio" name="service"> À emporter
+            <input type="radio" id="emporter" name="service" value="emporter"> 
+            <label for="emporter">À emporter</label>
             <br>
-            <input type="radio" name="service"> Livraison  
+            <input type="radio" id="livraison" name="service" value="livraison"> 
+            <label for="livraison">Livraison</label>
             <!--Groupe de boutons "radio" (boutons ronds) pour choisir le type de service-->
             <!--Un seul choix est possible grâce au même name="service"-->
 
@@ -122,7 +125,7 @@
 
         <br>
 
-        <button type="submit">Envoyer</button>
+        <button type="submit" id="button">Envoyer</button>
 
     </form>
 
