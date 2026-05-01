@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Bistrotter</title>
     <link rel="stylesheet" href="style.css">
+    <script src="doc.js"></script>
 </head>
 <body>
 
@@ -35,7 +36,7 @@
 <section id="form">
     <h2>Formulaire</h2>
 
-    <form id="formulaire">
+    <form id="monFormulaire">
 
         <fieldset id="infos-perso">
         <!--La balise fieldset nous permet de regrouper les champs liés aux infos personnelles-->
@@ -45,17 +46,26 @@
             <table>
                 <tr>
                     <td><label for="nom">Nom :</label></td>
-                    <td><input type="text" id="nom" name="nom" required></td>
+                    <td>
+                        <input type="text" id="nom" name="nom">
+                        <span id="erreur-nom" class="erreur"></span>
+                    </td>
                 </tr>
 
                 <tr>
                     <td><label for="email">Email :</label></td>
-                    <td><input type="email" id="email" name="email" required></td>
+                    <td>
+                        <input type="email" id="email" name="email">
+                        <span id="erreur-email" class="erreur"></span>
+                    </td>
                 </tr>
 
                 <tr>
                     <td><label for="telephone">Téléphone :</label></td>
-                    <td><input type="tel" id="telephone" name="telephone" required></td>
+                    <td>
+                        <input type="tel" id="telephone" name="telephone">
+                        <span id="erreur-telephone" class="erreur"></span>
+                    </td>
                 </tr>
             </table>
 
@@ -72,31 +82,39 @@
                 <tr>
                     <td><label for="type">Type de bistrot :</label></td>
                     <td>
-                        <select id="type" name="type" required>
+                        <select id="type" name="type">
+                
                             <option value="">-- Choisissez un type --</option>
                             <option>Traditionnel</option>
                             <option>Moderne</option>
                             <option>Gastronomique</option>
+                          
                         </select>
+                        <span id="erreur-type" class="erreur"></span>  
                     </td>
                 </tr>
 
                 <tr>
                     <td><label for="ville">Ville :</label></td>
-                    <td><input type="text" id="ville" name="ville" required></td>
+                    <td>
+                        <input type="text" id="ville" name="ville">
+                        <span id="erreur-ville" class="erreur"></span>
+                    </td>
+                        
                 </tr>
 
                 <tr>
                     <td><label for="prix">Fourchette de prix :</label></td>
                     <td>
                         
-                        <select id="prix" name="prix" required>
+                        <select id="prix" name="prix">
                             <option value="">-- Choisissez une gamme de prix --</option>
                             <option>€</option>
                             <option>€€</option>
                             <option>€€€</option>
                             <option>€€€€</option>
                         </select>
+                        <span id="erreur-prix" class="erreur"></span>
                     </td>
                 </tr>
             </table>
@@ -118,6 +136,7 @@
             <br>
             <input type="radio" id="livraison" name="service" value="livraison"> 
             <label for="livraison">Livraison</label>
+            <span id="erreur-service" class="erreur"></span>
             <!--Groupe de boutons "radio" (boutons ronds) pour choisir le type de service-->
             <!--Un seul choix est possible grâce au même name="service"-->
 
