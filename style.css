@@ -1,0 +1,297 @@
+:root {
+    --bordeaux:       #6b2737;   /* couleur principale : rouge bordeaux profond */
+    --bordeaux-clair: #8b3347;   /* bordeaux un peu plus clair pour les survols */
+    --or:             #c9a84c;   /* doré pour les détails décoratifs */
+    --creme:          #faf6f0;   /* fond principal, blanc cassé chaud */
+    --creme2:         #f0e8d8;   /* fond légèrement plus foncé pour les champs */
+    --texte:          #2a1f1a;   /* couleur du texte principal, brun très foncé */
+    --gris:           #6b5f57;   /* gris chaud pour le texte secondaire */
+    --bordure:        #d4c4b0;   /* couleur des bordures : beige moyen */
+    --erreur:         #b03030;   /* rouge pour les messages d'erreur */
+    --invalide-fond:  #fdf0f0;   /* fond rose très pâle pour les champs invalides */
+
+    --police-titre: 'Playfair Display', Georgia, serif; 
+    --police-corps: 'Lato', Verdana, sans-serif;     
+
+    --rayon: 2px;   /* coins très légèrement arrondis, look sobre et raffiné */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--police-corps);
+    font-size: 15px;
+    color: var(--texte);
+    background-color: var(--creme);
+    line-height: 1.7;
+}
+
+/* Zone de contenu centrale, pas trop large */
+main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 36px 24px;
+}
+
+header {
+    background-color: var(--bordeaux);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;   
+    overflow: hidden;
+}
+
+/* Motif discret en diagonale sur le header (effet tissu de nappe) */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 30px,
+        rgba(255, 255, 255, 0.03) 30px,
+        rgba(255, 255, 255, 0.03) 60px
+    );
+}
+
+/* Étoile décorative dorée en bas du header */
+header::after {
+    content: '✦';
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--or);
+    font-size: 18px;
+    opacity: 0.7;
+}
+
+/* Titre principal en italique, look carte de menu */
+header h1 {
+    font-family: var(--police-titre);
+    font-size: 3rem;
+    font-style: italic;
+    letter-spacing: 4px;
+    color: white;
+    position: relative; /* passe au-dessus du ::before */
+}
+
+/* Sous-titre en petites majuscules espacées */
+header p {
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.88rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.separateur {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+/* Les deux lignes horizontales de chaque côté du titre */
+.separateur span {
+    flex: 1;               /* prend tout l'espace disponible */
+    height: 1px;
+    background-color: var(--or);
+    opacity: 0.5;
+}
+
+/* Le texte du titre au centre */
+.separateur em {
+    font-family: var(--police-titre);
+    font-style: italic;
+    color: var(--or);
+    font-size: 1rem;
+    white-space: nowrap;   /* évite que le titre passe à la ligne */
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-family: var(--police-titre);
+    font-style: italic;
+    color: var(--bordeaux);
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+}
+
+/* Paragraphes de texte */
+p {
+    color: var(--gris);
+    margin-bottom: 10px;
+    font-size: 0.93rem;
+}
+
+fieldset {
+    border: 1px solid var(--bordure);
+    border-radius: var(--rayon);
+    padding: 22px 24px;
+    margin-bottom: 18px;
+    background-color: white;
+}
+
+/* La legend "flotte" au-dessus de la bordure du fieldset */
+legend {
+    font-family: var(--police-titre);
+    font-style: italic;
+    color: var(--bordeaux);
+    font-size: 0.95rem;
+    padding: 0 10px;
+    background-color: white; /* même fond que le fieldset pour bien couvrir la bordure */
+}
+
+/* Espace entre chaque ligne du tableau */
+tr {
+    display: block;
+    margin-bottom: 16px;
+}
+
+/* Cellules en colonne (label au-dessus du champ) */
+td {
+    display: block;
+    width: 100%;
+}
+
+/* Labels en petites majuscules */
+label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--gris);
+    margin-bottom: 6px;
+}
+
+/* Champs texte, email, téléphone */
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--bordure);
+    border-radius: var(--rayon);
+    font-family: var(--police-corps);
+    font-size: 0.93rem;
+    background-color: var(--creme2);  /* fond légèrement coloré */
+    color: var(--texte);
+    transition: border-color 0.2s;    /* transition douce au focus */
+}
+
+/* Listes déroulantes */
+select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--bordure);
+    border-radius: var(--rayon);
+    font-family: var(--police-corps);
+    font-size: 0.93rem;
+    background-color: var(--creme2);
+    color: var(--texte);
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+/* Focus : la bordure devient dorée */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
+    outline: none;
+    border-color: var(--or);         /* doré au lieu du bleu par défaut */
+    background-color: white;
+}
+
+input[type="radio"] {
+    accent-color: var(--bordeaux);   /* colore le bouton radio coché */
+    cursor: pointer;
+    margin-right: 6px;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+}
+
+/* Label des boutons radio */
+input[type="radio"] + label {
+    display: inline;             /* reste sur la même ligne que le bouton */
+    text-transform: none;        /* annule le text-transform uppercase des labels */
+    letter-spacing: 0;
+    font-weight: 400;
+    font-size: 0.93rem;
+    color: var(--gris);
+    cursor: pointer;
+}
+
+/* Espace sous chaque ligne radio */
+#services br {
+    display: block;
+    margin-bottom: 8px;
+    content: '';
+}
+
+#button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-top: 8px;
+    background-color: var(--bordeaux);
+    color: white;
+    border: none;
+    border-radius: var(--rayon);
+    font-family: var(--police-titre);    /* même police que les titres */
+    font-style: italic;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+/* Survol : bordeaux légèrement plus clair */
+#button:hover {
+    background-color: var(--bordeaux-clair);
+}
+
+/* Clic : tout petit enfoncement visuel */
+#button:active {
+    transform: scale(0.99);
+}
+
+/* Texte rouge sous le champ invalide */
+.erreur {
+    display: block;
+    color: var(--erreur);
+    font-size: 0.8rem;
+    font-style: italic;   /* italique pour se distinguer du texte normal */
+    margin-top: 4px;
+}
+
+/* Champ mis en rouge par le JS */
+.invalide {
+    border-color: var(--erreur) !important;
+    background-color: var(--invalide-fond) !important;
+}
+
+footer {
+    text-align: center;
+    padding: 22px;
+    border-top: 1px solid var(--bordure);
+    color: var(--gris);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
