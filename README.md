@@ -1,4 +1,0 @@
-# bistrotter
-Travail universitaire de groupe : Site de recommandation des bistrots français avec formulaire - projet UE L114 (HTML / JavaScript)
-Le programme de travail est le suivant :
-Cette semaine (20 → 26 avril) : vous allez inventer un scénario autour d'une société fictive qui aurait besoin de proposer un formulaire (de contact, de commande d'un produit, etc) sur son site web. Il faut donc réfléchir aux champs qui seraient nécessaires pour ce formulaire. En fin de semaine, vous fournirez sur l'espace de dépôt ci-dessous votre fichier HTML comprenant l'architecture du formulaire. A ce stade, aucun code Javascript n'est demandé mais vous pouvez bien sûr commencer à programmer. Il est important que le scénario soit clairement défini sur la page HTML produite, c'est-à-dire que l'on doit comprendre ce que fait l'entreprise et quels produits elle offre.
