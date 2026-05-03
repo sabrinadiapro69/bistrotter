@@ -154,6 +154,11 @@ legend {
     background-color: white; /* même fond que le fieldset pour bien couvrir la bordure */
 }
 
+/* Le tableau prend toute la largeur du fieldset */
+table {
+    width: 100%;
+}
+
 /* Espace entre chaque ligne du tableau */
 tr {
     display: block;
